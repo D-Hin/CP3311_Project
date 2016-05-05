@@ -45,6 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemies\EnemyHealth.cs" />
+     <Compile Include="Assets\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\EthanMain\CursorLock.cs" />
+     <Compile Include="Assets\EthanMain\MouseOrbitImproved.cs" />
+     <Compile Include="Assets\EthanMain\PlayerHealth.cs" />
+     <Compile Include="Assets\EthanMain\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\Fighter Pack Bundle Free\Code\CameraControl.cs" />
+     <Compile Include="Assets\Fighter Pack Bundle Free\Code\FighterAnimationDemo.cs" />
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Cloo\Bindings\CL10.cs" />
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Cloo\Bindings\CL11.cs" />
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Cloo\Bindings\CL12.cs" />
@@ -54,6 +62,7 @@
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Thinksquirrel\Fluvio\SamplePlugins\FluidMixer.cs" />
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Thinksquirrel\Fluvio\SamplePlugins\FluidTouch.cs" />
      <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+     <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
@@ -83,6 +92,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\Fluvio\Resources\ComputeShaders\Plugins\ColorByDensity\ComputeShader.compute" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectReplaceMetal.shader" />
@@ -110,11 +120,13 @@
      <None Include="Assets\Fluvio\Shaders\Particles\Fluvio-Mobile-Particles-AlphaBlended.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
+     <None Include="Assets\Enemies\Spider\Models\readme.txt" />
      <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Fluvio\Resources\ComputeShaders\SamplePlugins\FluidTouch\OpenCLShader.cl.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectReplaceSpecular.shader" />
+     <None Include="Assets\Five Seamless Tilable Ground Textures\read me.txt" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectComposite.shader" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectBlur.shader" />
      <None Include="Assets\Fluvio\Shaders\Particles\FluidParticleShader-Mobile.cginc" />
@@ -201,6 +213,7 @@
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\Gem\Shaders\Gem.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Fluvio\Resources\ComputeShaders\SamplePlugins\FluidMixer\ComputeShader.compute" />
      <None Include="Assets\Fluvio\Shaders\Particles\Fluvio-Particles-Multiply.shader" />
