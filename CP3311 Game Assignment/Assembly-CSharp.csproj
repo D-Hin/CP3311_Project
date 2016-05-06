@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\Enemies\Fish\FishMovement.cs" />
      <Compile Include="Assets\EthanMain\CursorLock.cs" />
      <Compile Include="Assets\EthanMain\MouseOrbitImproved.cs" />
      <Compile Include="Assets\EthanMain\PlayerHealth.cs" />
