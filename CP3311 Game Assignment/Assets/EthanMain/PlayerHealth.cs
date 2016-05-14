@@ -70,7 +70,10 @@ public class PlayerHealth : MonoBehaviour
 //		playerAudio.clip = deathClip;
 //		playerAudio.Play ();
 
-		Respawn ();
+//		Respawn ();
+		Respawn respawn = GetComponentInParent<Respawn>();
+
+//		isDead = false;
 	}
 
 	public void RestartLevel ()
@@ -85,10 +88,10 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 
-	public void Respawn ()
-	{
-//		this.gameObject.transform.position = SpawnPoint.transform.position;
-//		player.transform.position = SpawnPoint.transform.position;
-		isDead = false;
-	}
+//	public void Respawn ()
+//	{
+////		this.gameObject.transform.position = SpawnPoint.transform.position;
+////		player.transform.position = SpawnPoint.transform.position;
+//		isDead = false;
+//	}
 }
