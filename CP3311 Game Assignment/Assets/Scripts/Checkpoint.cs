@@ -5,13 +5,12 @@ public class Checkpoint : MonoBehaviour
 {
 	public Transform SpawnPoint;
 
-	void onTriggerEnter (Collider respawnCollider)
+	void onTriggerEnter (Collider checkpointCollider)
 	{
-		if (respawnCollider.gameObject.tag == "Player") {
-//			SpawnPoint.position = this.transform.position;
-
-		/*	The following line is based off of a JS code (requires further adjustments)	*/
-//			SpawnPoint.position = Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		if (checkpointCollider.tag == "Player") {
+//		if (checkpointCollider.gameObject.tag == "Player") {
+			SpawnPoint.position = transform.position;
+//			SpawnPoint.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		}
 	}
 }
