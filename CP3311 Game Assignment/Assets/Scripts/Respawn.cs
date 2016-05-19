@@ -4,12 +4,12 @@ using System.Collections;
 public class Respawn : MonoBehaviour
 {
 	public Transform SpawnPoint;
-	public GameObject Player;
+	public GameObject PlayerController;			// apply this to the ThirdPersonController, NOT the player prefab
 
 	void onTriggerEnter (Collider respawnCollider)
 	{
 		if (respawnCollider.tag == "Player") {
-			Player.transform.position = SpawnPoint.position;
+			PlayerController.transform.position = SpawnPoint.position;
 		}
 	}
 }

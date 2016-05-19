@@ -63,7 +63,8 @@
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Thinksquirrel\Fluvio\SamplePlugins\FluidMixer.cs" />
      <Compile Include="Assets\Fluvio\_Main\PlatformSource\Thinksquirrel\Fluvio\SamplePlugins\FluidTouch.cs" />
      <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
-     <Compile Include="Assets\Pickup.cs" />
+     <Compile Include="Assets\My Assets\CameraShake.cs" />
+     <Compile Include="Assets\My Assets\StandColliderScript.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ApplyChangesScript.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\ResizePanel.cs" />
      <Compile Include="Assets\Scripts\Respawn.cs" />
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
@@ -137,10 +139,11 @@
      <None Include="Assets\Fluvio\Resources\ComputeShaders\SamplePlugins\FluidTouch\OpenCLShader.cl.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectReplaceSpecular.shader" />
-     <None Include="Assets\Five Seamless Tilable Ground Textures\read me.txt" />
+     <None Include="Assets\read me.txt" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectComposite.shader" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectBlur.shader" />
      <None Include="Assets\Fluvio\Shaders\Particles\FluidParticleShader-Mobile.cginc" />
+     <None Include="Assets\Five Seamless Tilable Ground Textures\read me.txt" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\FluidEffectShadow.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

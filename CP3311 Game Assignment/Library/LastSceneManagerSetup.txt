@@ -5,6 +5,9 @@ sceneSetups:
 - path: Assets/Scenes/jungle.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/Scenes/VolcanoRooms.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Scenes/EruptionScene.unity
   isLoaded: 0
   isActive: 0

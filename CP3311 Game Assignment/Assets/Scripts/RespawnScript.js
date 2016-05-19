@@ -2,12 +2,12 @@
 
 var SpawnPoint: Transform;
 
-var Player: GameObject;
+var PlayerController: GameObject;			// apply this to the ThirdPersonController, NOT the player prefab
 
 function OnTriggerEnter(respawnCollider: Collider)
 {
 	if(respawnCollider.tag == "Player")
 	{
-		Player.transform.position = SpawnPoint.position;
+		PlayerController.transform.position = SpawnPoint.position;
 	}
 }

@@ -113,10 +113,11 @@
      <None Include="Assets\Fluvio\Resources\ComputeShaders\SamplePlugins\FluidTouch\OpenCLShader.cl.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectReplaceSpecular.shader" />
-     <None Include="Assets\Five Seamless Tilable Ground Textures\read me.txt" />
+     <None Include="Assets\read me.txt" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectComposite.shader" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\Hidden-FluidEffectBlur.shader" />
      <None Include="Assets\Fluvio\Shaders\Particles\FluidParticleShader-Mobile.cginc" />
+     <None Include="Assets\Five Seamless Tilable Ground Textures\read me.txt" />
      <None Include="Assets\Fluvio\Shaders\FluidEffect\FluidEffectShadow.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
