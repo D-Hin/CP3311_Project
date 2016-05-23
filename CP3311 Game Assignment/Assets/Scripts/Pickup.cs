@@ -8,8 +8,12 @@ public class Pickup : MonoBehaviour
 	Transform move;
 	float floatSpeed;
 	float timer;
+	GameObject scoreObject;
+	ScoreManager scoreManager;
 
 	void Start() {
+		scoreObject = GameObject.FindGameObjectWithTag ("ScoreManager");
+		scoreManager = scoreObject.GetComponent<ScoreManager> ();
 		move = GetComponent<Transform> ();
 		timer = 0;
 
@@ -47,7 +51,7 @@ public class Pickup : MonoBehaviour
 		PlayerHealth health = other.gameObject.GetComponent<PlayerHealth>();
 		if (health != null)		{
 			//Perform pickup
-			//scoreManager.AddPoints(pointsType, points);
+			scoreManager.AddScore(points, pointsType);
 			
 			//Destroy the pickup itself
 			Destroy(gameObject);

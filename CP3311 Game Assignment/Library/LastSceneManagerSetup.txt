@@ -1,7 +1,10 @@
 sceneSetups:
-- path: Assets/Scenes/MainScene.unity
+- path: Assets/MainMenu/StartMenuScene.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Scenes/MainScene.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Scenes/jungle.unity
   isLoaded: 0
   isActive: 0
@@ -9,5 +12,8 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
 - path: Assets/Scenes/EruptionScene.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/LoadingScene/LoadScene.unity
   isLoaded: 0
   isActive: 0

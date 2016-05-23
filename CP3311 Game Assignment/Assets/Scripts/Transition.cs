@@ -4,7 +4,9 @@ using System.Collections;
 
 public class Transition : MonoBehaviour
 {
-	public int destination;
+	public int sceneTarget;
+	public int checkpointTarget;
+	GameMenu gameMenu;
 
 	void OnTriggerEnter (Collider transitionCollider)
 	{
@@ -12,7 +14,9 @@ public class Transition : MonoBehaviour
 //		PlayerHealth health = transitionCollider.gameObject.GetComponentInParent<PlayerHealth>();
 //		if (health != null) {
 		if (transitionCollider.gameObject.tag == "Player") {
-			SceneManager.LoadScene (destination, LoadSceneMode.Single);
+			gameMenu = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameMenu> ();
+			gameMenu.SetCurrentCheckpoint (checkpointTarget);
+			SceneManager.LoadScene (sceneTarget, LoadSceneMode.Single);
 		}
 	}
 }

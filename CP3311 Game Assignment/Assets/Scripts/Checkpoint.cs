@@ -3,14 +3,15 @@ using System.Collections;
 
 public class Checkpoint : MonoBehaviour
 {
-	public Transform SpawnPoint;
+	public int checkPointNum;
+	GameMenu gameMenu;
 
-	void onTriggerEnter (Collider checkpointCollider)
-	{
-		if (checkpointCollider.tag == "Player") {
-//		if (checkpointCollider.gameObject.tag == "Player") {
-			SpawnPoint.position = transform.position;
-//			SpawnPoint.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+	void OnTriggerEnter (Collider checkPointCollider)
+	{	//check player touched checkpoint
+		if (checkPointCollider.gameObject.tag == "Player") {
+			//set the players respawn point to this one
+			gameMenu = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameMenu> ();
+			gameMenu.SetCurrentCheckpoint (checkPointNum);
 		}
 	}
 }

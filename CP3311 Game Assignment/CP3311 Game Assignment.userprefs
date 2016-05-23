@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Respawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
     <Files>
       <File FileName="Assets/EthanMain/PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Transition.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Checkpoint.cs" Line="13" Column="47" />
+      <File FileName="Assets/Scripts/Transition.cs" Line="18" Column="51" />
+      <File FileName="Assets/Scripts/Checkpoint.cs" Line="18" Column="1" />
       <File FileName="Assets/Scripts/CheckpointScript.js" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Respawn.cs" Line="16" Column="1" />
-      <File FileName="Assets/Scripts/RespawnScript.js" Line="5" Column="102" />
-      <File FileName="Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="17" Column="52" />
+      <File FileName="Assets/Scripts/RespawnScript.js" Line="1" Column="1" />
+      <File FileName="Assets/EthanMain/PlayerRespawn.cs" Line="22" Column="70" />
+      <File FileName="Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" Line="200" Column="3" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="78" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
