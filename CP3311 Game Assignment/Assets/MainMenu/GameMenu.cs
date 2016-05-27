@@ -12,6 +12,9 @@ public class GameMenu : MonoBehaviour {
 	public Text fpsCounter;
 	public Slider healthSlider;
 	public ScoreManager scoreManager;
+	public Image messageBox;
+	public Text messageText;
+	public Text goalText;
 
 	private bool gameOver;
 	private Color fadingBackground = new Color(0f, 0f, 0f, 0.1f);
@@ -19,6 +22,10 @@ public class GameMenu : MonoBehaviour {
 
 	public int currentScene = 0;
 	public int currentCheckpoint = 1;
+	public bool fixedCam = true;
+
+	public int messageNum = 0;
+	float messageTimer = 0f;
 
 
 	// Use this for initialization
@@ -34,10 +41,13 @@ public class GameMenu : MonoBehaviour {
 		gameOver = false;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
+
 	}
 
 	void Update()
 	{	//open/close pause menu
+		messageTimer += Time.deltaTime;
+		DoMessage ();
 		if (!gameOver) {
 			if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.P)) {
 				pauseMenu.enabled = !pauseMenu.enabled;
@@ -52,6 +62,26 @@ public class GameMenu : MonoBehaviour {
 			//turn on/off FPS counter
 			if (Input.GetKeyDown (KeyCode.F)) {
 				fpsCounter.enabled = !fpsCounter.enabled;
+			}
+
+			if (Input.GetKeyDown (KeyCode.Alpha0)) {
+				SceneManager.LoadScene (0);
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha1)) {
+				SceneManager.LoadScene (1);
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha2)) {
+				SceneManager.LoadScene (2);
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha3)) {
+				SceneManager.LoadScene (3);
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha4)) {
+				SceneManager.LoadScene (4);
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha5)) {
+				currentCheckpoint = 2;
+				SceneManager.LoadScene (3);
 			}
 
 			//player has died game over
@@ -129,4 +159,45 @@ public class GameMenu : MonoBehaviour {
 	public void SetCurrentCheckpoint(int value) {
 		currentCheckpoint = value;
 	}
+
+	public bool GetFixedCam() {
+		return fixedCam;
+	}
+	public void SetFixedCam(bool value) {
+		fixedCam = value;
+	}
+
+	void DoMessage() {
+		if (messageTimer < 6f) {
+			messageBox.color = new Color (0.5f, 0.5f, 0.5f, 0.3f);
+			messageText.color = Color.white;
+		} else {
+			messageBox.color = Color.clear;
+			messageText.color = Color.clear;
+		}
+	}
+	public int GetMessageNum() {
+		return messageNum;
+	}
+	public void SetMessage(int value){
+		messageNum = value;
+		messageTimer = 0f;
+		if (messageNum == 0) {
+			messageText.text = "Explore the island for a way into the jungle \n Collect any artifacts you find along the way";
+			goalText.text = "Explore the island for a way into the jungle";
+		}
+		if (messageNum == 1) {
+			messageText.text = "You can't leave the island without your prize";
+		}
+		if (messageNum == 2) {
+			messageText.text = "Fight creatures and avoid fish to stay alive \n Ctrl or left click to punch";
+		}
+		if (messageNum == 3) {
+			messageText.text = "These spiky fish can't be hurt \n Be careful and avoid them";
+		}
+		if (messageNum == 4) {
+			messageText.text = "Jump with space";
+		}
+	}
+
 }

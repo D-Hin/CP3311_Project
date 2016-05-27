@@ -6,11 +6,13 @@ public class Checkpoint : MonoBehaviour
 	public int checkPointNum;
 	GameMenu gameMenu;
 
-	void OnTriggerEnter (Collider checkPointCollider)
+	void Start() {
+		gameMenu = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameMenu>();
+	}
+
+	void OnTriggerEnter (Collider other)
 	{	//check player touched checkpoint
-		if (checkPointCollider.gameObject.tag == "Player") {
-			//set the players respawn point to this one
-			gameMenu = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameMenu> ();
+		if (other.gameObject.tag == "Player") {
 			gameMenu.SetCurrentCheckpoint (checkPointNum);
 		}
 	}

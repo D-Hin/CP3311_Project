@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
 
 
     Text text;                      // Reference to the Text component.
-
+	float timer;
 
     void Awake ()
     {
@@ -18,18 +18,27 @@ public class ScoreManager : MonoBehaviour
 
         // Reset the score.
         score = 0;
+		timer = 0f;
     }
 
 
     void Update ()
     {
-        // Set the displayed text to be the word "Score" followed by the score value.
-        text.text = "Score: " + score;
+		timer += Time.deltaTime;
+
+		if (timer < 2f) {
+			// Set the displayed text to be the word "Score" followed by the score value.
+			text.text = "Score: " + score;
+		} else {
+			text.text = "";
+		}
+		
     }
 
 	public void AddScore (int points, int pointsType) 
 	{
 		score += points;
+		timer = 0f;
 	}
 
 	public void SubScore (int points) {
@@ -37,5 +46,9 @@ public class ScoreManager : MonoBehaviour
 		if (score < 0) {
 			score = 0;
 		}
+	}
+
+	public int GetScore () {
+		return score;
 	}
 }

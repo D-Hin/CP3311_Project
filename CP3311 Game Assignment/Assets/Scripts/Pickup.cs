@@ -10,11 +10,14 @@ public class Pickup : MonoBehaviour
 	float timer;
 	GameObject scoreObject;
 	ScoreManager scoreManager;
+	public AudioSource soundEffect;
+	public AudioSource pickupSound;
 
 	void Start() {
 		scoreObject = GameObject.FindGameObjectWithTag ("ScoreManager");
 		scoreManager = scoreObject.GetComponent<ScoreManager> ();
 		move = GetComponent<Transform> ();
+		pickupSound = soundEffect.GetComponent<AudioSource> ();
 		timer = 0;
 
 		//how fast the pickups bob up and down
@@ -52,7 +55,7 @@ public class Pickup : MonoBehaviour
 		if (health != null)		{
 			//Perform pickup
 			scoreManager.AddScore(points, pointsType);
-			
+			pickupSound.Play ();
 			//Destroy the pickup itself
 			Destroy(gameObject);
 		}
