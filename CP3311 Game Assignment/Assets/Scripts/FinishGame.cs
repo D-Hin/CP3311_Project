@@ -25,6 +25,8 @@ public class FinishGame : MonoBehaviour {
 		ethanMesh.enabled = false;
 		chalice.enabled = false;
 		finishCam.enabled = false;
+		finishCam.GetComponent<AudioListener> ().enabled = false;
+		finishCam.GetComponent<AudioSource> ().enabled = false;
 		finishCanvas.enabled = false;
 	}
 
@@ -39,8 +41,11 @@ public class FinishGame : MonoBehaviour {
 			Destroy (player);
 			Destroy (boat);
 			finalScore = GameObject.FindGameObjectWithTag ("ScoreManager").GetComponent<ScoreManager> ().GetScore ();
-			gameMenu.enabled = false;
-			Destroy (gameMenu);
+			if (gameMenu.GetMusicOn ()) {
+				finishCam.GetComponent<AudioListener> ().enabled = true;
+				finishCam.GetComponent<AudioSource> ().enabled = true;
+			}
+			//Destroy (gameMenu);
 			finishCam.enabled = true;
 			boatMesh.enabled = true;
 			ethanMesh.enabled = true;
@@ -50,13 +55,13 @@ public class FinishGame : MonoBehaviour {
 			scoreText.text = "Your final score is " + finalScore + "!";
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
-
 		}
 	}
 
 	public void finishGameBtn () {
-		DestroyObject (transform.gameObject);
-		SceneManager.LoadScene (0);
-		Time.timeScale = 1;
+		Application.Quit ();
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#endif
 	}
 }

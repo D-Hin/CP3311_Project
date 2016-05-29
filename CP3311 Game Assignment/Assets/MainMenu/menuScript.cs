@@ -7,15 +7,17 @@ public class menuScript : MonoBehaviour {
 
 	public Canvas mainMenu;
 	public Canvas optionsMenu;
+	public Canvas creditsMenu;
 	public Canvas quitMenu;
 	public Toggle mouseUse;
 	public Toggle backgroundMusic;
 	public Slider slider;
 	public InputField inputField;
 	public GameObject gameManager;
+	public AudioSource bgMusic;
 
 	public string mouseMessage;
-	public string musicMessage;
+	public string musicMessage = "Yes";
 	public float sliderValue;
 	public string inputName;
 
@@ -23,6 +25,7 @@ public class menuScript : MonoBehaviour {
 		gameManager.SetActive (false);
 		mainMenu.enabled = true;
 		optionsMenu.enabled = false;
+		creditsMenu.enabled = false;
 		quitMenu.enabled = false;
 	}
 		
@@ -33,6 +36,13 @@ public class menuScript : MonoBehaviour {
 		} else {
 			gameManager.GetComponent<GameMenu> ().SetFixedCam (false);
 		}
+
+		if (backgroundMusic.isOn) {
+			gameManager.GetComponent<GameMenu> ().SetMusicOn (true);
+		} else {
+			gameManager.GetComponent<GameMenu> ().SetMusicOn (false);
+		}
+
 		SceneManager.LoadScene (1);
 
 	}
@@ -57,9 +67,7 @@ public class menuScript : MonoBehaviour {
 		}
 
 		sliderValue = slider.value;
-		//Debug.Log (sliderValue);
 		inputName = inputField.text;
-		//Debug.Log (inputName);
 	}
 
 	public void OptionsToMain() {
@@ -71,9 +79,9 @@ public class menuScript : MonoBehaviour {
 		}
 
 		if (musicMessage == "Yes") {
-			backgroundMusic.isOn = true;
+			gameManager.GetComponent<GameMenu> ().SetMusicOn (true);
 		} else if (musicMessage == "No") {
-			backgroundMusic.isOn = false;
+			gameManager.GetComponent<GameMenu> ().SetMusicOn (false);
 		}
 
 		slider.value = sliderValue;
@@ -83,42 +91,36 @@ public class menuScript : MonoBehaviour {
 		mainMenu.enabled = true;
 	}
 		
+	public void ToCredits() {
+		creditsMenu.enabled = true;
+	}
+
+	public void CreditsReturn() {
+		creditsMenu.enabled = false;
+	}
+
 	public void ApplySettings() {
 		if (mouseUse.isOn) {
 			Debug.Log ("Player would like to use mouse");
 			mouseMessage = "Yes";
+			gameManager.GetComponent<GameMenu> ().SetFixedCam (true);
 		} else {
 			Debug.Log ("Player is not using the mouse");
 			mouseMessage = "No";
+			gameManager.GetComponent<GameMenu> ().SetFixedCam (false);
 		}
 
 		if (backgroundMusic.isOn) {
 			Debug.Log ("Player has background music on");
 			musicMessage = "Yes";
+			bgMusic.mute = false;
 		} else {
 			Debug.Log ("Player is not playing background music");
 			musicMessage = "No";
+			bgMusic.mute = true;
 		}
 		sliderValue = slider.value;
-		//Debug.Log (sliderValue);
 		inputName = inputField.text;
-		//Debug.Log(inputName);
-
-//		message = "settings : \nslider set to : " + slider.value + " \ntoggle 1 is ";
-//		if (toggle1.isOn) {
-//			message += "On \n";
-//		} else {
-//			message += "Off \n";
-//		}
-//		message += "toggle 2 is ";
-//		if (toggle2.isOn) {
-//			message += "On \n";
-//		} else {
-//			message += "Off \n";
-//		}
-//		message += "username is : " + inputField.text + " \n ";
-//	
-//		print (message);
 
 		optionsMenu.enabled = false;
 		mainMenu.enabled = true;
@@ -139,8 +141,12 @@ public class menuScript : MonoBehaviour {
 		quitMenu.enabled = false;
 		mainMenu.enabled = true;
 	}
-}
 
-//	public void SetSlider() {
-//		sliderValue = slider.value;
+//	public void musicToggle() {
+//		if (backgroundMusic.isOn) {
+//			bgMusic.mute = false;
+//		} else {
+//			bgMusic.mute = true;
+//		}
 //	}
+}
