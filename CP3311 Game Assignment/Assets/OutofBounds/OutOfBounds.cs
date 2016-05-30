@@ -17,7 +17,7 @@ public class OutOfBounds : MonoBehaviour {
 
 		if (health != null)		{
 			//Player takes damage
-			health.TakeDamage(10);
+			health.TakeDamage(20);
 			//move player back to respawn point
 			player.position = respawnPoint.position;
 

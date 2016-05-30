@@ -141,12 +141,4 @@ public class menuScript : MonoBehaviour {
 		quitMenu.enabled = false;
 		mainMenu.enabled = true;
 	}
-
-//	public void musicToggle() {
-//		if (backgroundMusic.isOn) {
-//			bgMusic.mute = false;
-//		} else {
-//			bgMusic.mute = true;
-//		}
-//	}
 }

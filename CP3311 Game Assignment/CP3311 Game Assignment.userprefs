@@ -1,18 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs">
-    <Files>
-      <File FileName="Assets/EthanMain/PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Transition.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Checkpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CheckpointScript.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Respawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/RespawnScript.js" Line="1" Column="1" />
-      <File FileName="Assets/EthanMain/PlayerRespawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" Line="200" Column="3" />
-      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="85" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

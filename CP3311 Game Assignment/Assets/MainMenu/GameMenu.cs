@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour {
 
 	public Canvas pauseMenu;
+	public Canvas GMOptionsMenu;
 	public Canvas quitMenu;
 	public Canvas gameOverCanvas;
 	public Image gameOverBackground;
@@ -16,6 +17,12 @@ public class GameMenu : MonoBehaviour {
 	public Text messageText;
 	public Text goalText;
 
+	public menuScript menuScript;
+	public InputField GMInputField;
+	public Slider GMVolumeSlider;
+	public Toggle mouseUse;
+	public Toggle backgroundMusic;
+
 	private bool gameOver;
 	private Color fadingBackground = new Color(0f, 0f, 0f, 0.1f);
 	private float fadeSpeed = 0.1f;
@@ -25,12 +32,18 @@ public class GameMenu : MonoBehaviour {
 	public bool fixedCam = true;
 	public bool musicOn = true;
 
+	public AudioSource MainSceneAudio;
+	public AudioSource JungleSceneAudio;
+	public AudioSource VolcanoRoomsSceneAudio;
+	public AudioSource EruptionSceneAudio;
+
 	float messageTimer = 0f;
 
 
 	// Use this for initialization
 	void Awake () {
 		DontDestroyOnLoad (this);
+		GMOptionsMenu.enabled = false;
 		pauseMenu.enabled = false;
 		quitMenu.enabled = false;
 		gameOverCanvas.enabled = false;
@@ -49,7 +62,7 @@ public class GameMenu : MonoBehaviour {
 		messageTimer += Time.deltaTime;
 		DoMessage ();
 		if (!gameOver) {
-			if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.P)) {
+			if ((Input.GetKeyDown (KeyCode.Escape) & GMOptionsMenu.enabled == false) || (Input.GetKeyDown (KeyCode.P) & GMOptionsMenu.enabled == false)) {
 				pauseMenu.enabled = !pauseMenu.enabled;
 				Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 				if (Cursor.lockState == CursorLockMode.None) {
@@ -203,4 +216,69 @@ public class GameMenu : MonoBehaviour {
 		goalText.text = goal;
 	}
 
+	public void PauseMenuToGMOptionsMenu() {
+		pauseMenu.enabled = false;
+		GMOptionsMenu.enabled = true;
+
+		//Shows the same information on this option menu as does the initial option menu
+		if (menuScript.mouseUse.isOn) {
+			menuScript.mouseMessage = "Yes";
+			mouseUse.isOn = true;
+		} 
+		else {
+			menuScript.mouseMessage = "No";
+			mouseUse.isOn = false;
+		}
+
+		if (menuScript.backgroundMusic.isOn) {
+			menuScript.musicMessage = "Yes";
+			backgroundMusic.isOn = true;
+		} 
+		else {
+			menuScript.musicMessage = "No";
+			backgroundMusic.isOn = false;
+		}
+		GMVolumeSlider.value = menuScript.sliderValue;
+		GMInputField.text = menuScript.inputField.text;
+	}
+
+	public void GMOptionsToPause() {
+		GMOptionsMenu.enabled = false;
+		pauseMenu.enabled = true;
+	}
+
+	public void ApplySettings() {
+		//Apply the changes to the menuScript options menu which will transfer changes to GM Options upon next opening
+		if (mouseUse.isOn == true) {
+			Debug.Log ("Player would like to use mouse");
+			menuScript.mouseMessage = "Yes";
+			menuScript.mouseUse.isOn = true;
+			//SetFixedCam (false);
+		} else {
+			Debug.Log ("Player is not using the mouse");
+			menuScript.mouseMessage = "No";
+			menuScript.mouseUse.isOn = false;
+			//SetFixedCam (true);
+		}
+
+		if (backgroundMusic.isOn == true) {
+			Debug.Log ("Player has background music on");
+			menuScript.musicMessage = "Yes";
+			menuScript.backgroundMusic.isOn = true;
+			//SetMusicOn (true);
+
+
+		} else {
+			Debug.Log ("Player is not playing background music");
+			menuScript.musicMessage = "No";
+			menuScript.backgroundMusic.isOn = false;
+			//SetMusicOn (false);
+		}
+		menuScript.inputField.text = GMInputField.text;
+		menuScript.sliderValue = GMVolumeSlider.value; 
+
+		GMOptionsMenu.enabled = false;
+		pauseMenu.enabled = true;
+	}
 }
+
