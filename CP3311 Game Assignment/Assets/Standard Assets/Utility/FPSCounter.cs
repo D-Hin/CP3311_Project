@@ -11,14 +11,16 @@ namespace UnityStandardAssets.Utility
         private int m_FpsAccumulator = 0;
         private float m_FpsNextPeriod = 0;
         private int m_CurrentFps;
-        const string display = "{0} FPS";
+        const string display = "Frame Frequency: {0}fps";
         private Text m_Text;
+
 
         private void Start()
         {
             m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
             m_Text = GetComponent<Text>();
         }
+
 
         private void Update()
         {
@@ -29,8 +31,8 @@ namespace UnityStandardAssets.Utility
                 m_CurrentFps = (int) (m_FpsAccumulator/fpsMeasurePeriod);
                 m_FpsAccumulator = 0;
                 m_FpsNextPeriod += fpsMeasurePeriod;
-                m_Text.text = string.Format(display, m_CurrentFps);
-				m_Text.text += "MS: " + (Time.deltaTime * 1000);
+				m_Text.text = "Time per Frame: " + (Time.deltaTime * 1000) + "ms";
+				m_Text.text += "\n" + string.Format(display, m_CurrentFps);
             }
         }
     }
